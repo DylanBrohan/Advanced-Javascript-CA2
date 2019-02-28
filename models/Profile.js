@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const ProfileSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
+    // Setting up ONE to Many Relationship between collections
     ref: "user"
   },
   handle: {
