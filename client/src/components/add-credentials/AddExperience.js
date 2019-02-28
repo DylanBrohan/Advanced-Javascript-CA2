@@ -83,7 +83,7 @@ class AddExperience extends Component {
               <small className="d-block.pb-3">* = Required Fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* Company"
+                  placeholder="* Company or Record Label"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
@@ -133,7 +133,7 @@ class AddExperience extends Component {
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
-                    Current Job
+                    Current
                   </label>
                   <TextAreaFieldGroup
                     placeholder="Job Description"
@@ -146,7 +146,7 @@ class AddExperience extends Component {
                   <input
                     type="submit"
                     value="Submit"
-                    className="btn btn-info btn-block mt-4"
+                    className="btn btn-success btn-block mt-4"
                   />
                 </div>
               </form>

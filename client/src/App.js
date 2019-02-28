@@ -71,7 +71,6 @@ class App extends Component {
             <Route exact path="/profiles" component={Profiles} />
             <Route exact path="/profile/:handle" component={Profile} />
             {/* Switch allows to redirect when logout is clicked */}
-
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
