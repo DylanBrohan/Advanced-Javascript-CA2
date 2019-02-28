@@ -7,7 +7,7 @@ const passport = require("passport");
 // Routing to the files in the API folder
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
-
+const path = require("path");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,13 +28,18 @@ app.use(passport.initialize());
 //Passport Config file
 require("./config/passport")(passport);
 
-// app.get("/", (req, res) => res.send("hello")); //Route takes in 2 parametres and directs to home page
-
-// app.get("/test"); //Route takes in 2 parametres and directs to home page
-
 // User Routes
 app.use("/api/users", users);
 app.use("/api/profile", profile);
+
+// Server static assets if in production
+// if (process.end.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
+// }
 
 const port = process.env.PORT || 5000; //listen to port 5000 localhost
 

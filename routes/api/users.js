@@ -123,8 +123,4 @@ router.get(
   }
 );
 
-router.get("/recommendation", (req, res) => {
-  console.log("we got the command");
-});
-
 module.exports = router;
