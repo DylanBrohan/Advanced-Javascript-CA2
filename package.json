@@ -1,7 +1,7 @@
 {
   "name": "advancedjavascriptca2",
   "version": "1.0.0",
-  "description": "Assignment 2 for Advanced JavaScript ",
+  "description": "Assignment 2 for Advanced JavaScript, My Music is a Music Portfolio application for artists",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
