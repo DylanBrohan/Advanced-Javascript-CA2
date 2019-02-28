@@ -123,13 +123,13 @@ class CreateProfile extends Component {
     // Select options for status
     const options = [
       { label: "* Select Professional Status", value: 0 },
-      { label: "Developer", value: "Developer" },
-      { label: "Junior Developer", value: "Junior Developer" },
-      { label: "Senior Developer", value: "Senior Developer" },
-      { label: "Web Designer", value: "Web Designer" },
-      { label: "Student or Learning", value: "Student or Learning" },
-      { label: "General Manager", value: "General Manager" },
-      { label: "Instructor or Teacher", value: "Instructor or Teacher" },
+      { label: "Solo Artist", value: "Solo Artist" },
+      { label: "Mix DJ", value: "Mix DJ" },
+      { label: "MC", value: "MC" },
+      { label: "Vocalist", value: "Vocalist" },
+      { label: "Rock Band", value: "Rock Band" },
+      { label: "Hip-Hop Artist", value: "Hip-Hop Artist" },
+      { label: "Alternative Group", value: "Alternative Group" },
       { label: "Other", value: "Other" }
     ];
     return (
@@ -174,7 +174,7 @@ class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Show of Your website to Other Tech heads"
+                  info="Want to Show of your Beats? Give a Website"
                 />
                 <TextFieldGroup
                   placeholder="Location"
@@ -185,12 +185,12 @@ class CreateProfile extends Component {
                   info="Place of Living?"
                 />
                 <TextFieldGroup
-                  placeholder="Tech Skills"
+                  placeholder="Musical Skills"
                   name="skills"
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
-                  info="Please use comma Seperated values (eg.HTML,CSS,JavaScript)"
+                  info="Please use comma Seperated values (eg.Guitar,Drummer,Deck Mixing,Synthesizers)"
                 />
                 <TextFieldGroup
                   placeholder="GitHub"
@@ -206,7 +206,7 @@ class CreateProfile extends Component {
                   value={this.state.bio}
                   onChange={this.onChange}
                   error={errors.bio}
-                  info="Tell the Tech community about yourself"
+                  info="Tell Other Music Artists about yourself"
                 />
                 <div className="mb-3">
                   <button
@@ -228,7 +228,7 @@ class CreateProfile extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-success btn-block mt-4"
                 />
               </form>
             </div>
