@@ -113,18 +113,20 @@ class Register extends Component {
   }
 }
 // Mapping all prop types
+// PropTypes for typechecking check when wrong props are passed through the component
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 // putting auth state inside a property called auth for easy access
+// maps the state from the store to this component
 const mapStateToProps = state => ({
-  // comes from rootReducer
   auth: state.auth,
   errors: state.errors
 });
 // maps actions in component Register
+// creates connection to the store
 export default connect(
   mapStateToProps,
   { registerUser }

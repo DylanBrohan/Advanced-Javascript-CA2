@@ -179,7 +179,6 @@ router.post(
         current: req.body.current,
         description: req.body.description
       };
-
       // Add to exp array
       profile.experience.unshift(newExp);
       profile.save().then(profile => res.json(profile));
@@ -193,7 +192,9 @@ router.post(
   "/education",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { errors, isValid } = validateEducationInput(req.body);
+    const { errors, isValid } =
+      // ValidateEducationInput is a function in validation folder ->
+      validateEducationInput(req.body);
     // CHECK Validation
     if (!isValid) {
       // Return any errors with 400 status

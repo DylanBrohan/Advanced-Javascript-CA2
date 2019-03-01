@@ -2,6 +2,7 @@ const Validator = require("validator");
 const isEmpty = require("./is-empty");
 
 module.exports = function validateExperienceInput(data) {
+  // Setting errors to be empty
   let errors = {};
 
   data.school = !isEmpty(data.school) ? data.school : "";

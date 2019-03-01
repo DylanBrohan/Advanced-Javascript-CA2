@@ -94,11 +94,14 @@ Login.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
+
+// This is taking the state from the 'Store' and passing it into the props into the component
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
+// Connect connects the component to the redux store
 export default connect(
   mapStateToProps,
   { loginUser }
