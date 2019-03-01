@@ -8,6 +8,20 @@ This project is hosted on [Heroku - My Music](https://still-forest-16737.herokua
 
 **This Application Hopes to allow Music lovers and Artists to browse and connect with one another while also allowing them to view other users Information**
 
+## Technologies Used
+
+- [React](https://reactjs.org/docs/getting-started.html) - JavaScript Library
+- [Node](https://nodejs.org/en/) - Dependency
+- [Bootstrap](https://react-bootstrap.github.io/getting-started/introduction) - CSS framework
+- [Redux](https://redux.js.org/) - Redux
+- [MongoDB](https://redux.js.org/) - MongoDB(Mlab)
+- [Passport](http://www.passportjs.org/) - Passport
+- [Express](https://expressjs.com/) - Express
+
+## Authors
+
+- **Dylan Brohan** - _Initial work_ - [DylanBrohan](https://github.com/DylanBrohan)
+
 ## Application Instructions
 
 # 1:
@@ -21,7 +35,6 @@ npm install (Both Server & Client Side)
 # 3:
 
 npm run dev
-
 _To begin both server Concurrently_
 
 # 4:
