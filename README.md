@@ -14,7 +14,7 @@ _Client Side_
 
 - [React](https://reactjs.org/docs/getting-started.html) - JavaScript Library
 - [Bootstrap](https://react-bootstrap.github.io/getting-started/introduction) - CSS framework
-- [Redux](https://redux.js.org/) - Redux
+- [Redux](https://redux.js.org/) - State Management / Control
 
 _Server Side_
 
@@ -26,7 +26,7 @@ _Database_
 
 _Security & Communication_
 
-- [Passport](http://www.passportjs.org/) - Passport
+- [Passport](http://www.passportjs.org/) - Security & JWT Token
 - [Express](https://expressjs.com/) - Express
 
 ## Authors
