@@ -14,13 +14,13 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-
+  // When the component Mounts, & is authenticated , redirect to the dashboard Link
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
   }
-
+  // This Method is called when any change in state occurs
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
@@ -95,13 +95,13 @@ Login.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-// This is taking the state from the 'Store' and passing it into the props into the component
+// This is taking the state from the 'Store' and passing it into the props into this component
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
-// Connect connects the component to the redux store
+// connects the component to the redux store
 export default connect(
   mapStateToProps,
   { loginUser }

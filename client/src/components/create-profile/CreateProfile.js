@@ -38,7 +38,7 @@ class CreateProfile extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-
+  // When the component state changes update the state
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
@@ -46,7 +46,7 @@ class CreateProfile extends Component {
   }
   onSubmit(e) {
     e.preventDefault();
-    // Has All the profile fields
+    // Has All the profile fields from state
     const profileData = {
       handle: this.state.handle,
       company: this.state.company,
@@ -244,7 +244,7 @@ CreateProfile.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-// Maps the state to the Field
+// Maps the state to the Field from store
 const mapStateToProps = state => ({
   profile: state.profile,
   // Listens for the errors state, in the Errors Reducer

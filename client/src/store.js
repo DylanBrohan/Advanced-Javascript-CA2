@@ -6,10 +6,9 @@ const middleware = [thunk];
 
 const initialState = {};
 
-//First parametre [] is reducer
-
+//First parametre [] is  reducer
 const store = createStore(
-  // Passes in rootReducer which has all the sub reducers in it
+  // Passes in rootReducer which has all the sub reducers combined
   rootReducer,
   initialState,
   compose(

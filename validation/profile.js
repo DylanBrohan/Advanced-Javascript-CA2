@@ -4,13 +4,20 @@ const isEmpty = require("./is-empty");
 module.exports = function validateProfileInput(data) {
   let errors = {};
 
-  //   validates users profile
+  // If it exists it will be the result
+  // if School field doesnt exist, make it an empty string
+
   data.handle = !isEmpty(data.handle) ? data.handle : "";
   data.status = !isEmpty(data.status) ? data.status : "";
   data.skills = !isEmpty(data.skills) ? data.skills : "";
 
   // Validation settings/ testing
-  if (!Validator.isLength(data.handle, { min: 2, max: 40 })) {
+  if (
+    !Validator.isLength(data.handle, {
+      min: 2,
+      max: 40
+    })
+  ) {
     errors.handle = "Handle needs to between 2 and 4 charecters ";
   }
 

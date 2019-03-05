@@ -10,11 +10,22 @@ This project is hosted on [Heroku - My Music](https://still-forest-16737.herokua
 
 ## Technologies Used
 
+_Client Side_
+
 - [React](https://reactjs.org/docs/getting-started.html) - JavaScript Library
-- [Node](https://nodejs.org/en/) - Dependency
 - [Bootstrap](https://react-bootstrap.github.io/getting-started/introduction) - CSS framework
 - [Redux](https://redux.js.org/) - Redux
+
+_Server Side_
+
+- [Node](https://nodejs.org/en/) - Dependency
+
+_Database_
+
 - [MongoDB](https://redux.js.org/) - MongoDB(Mlab)
+
+_Security & Communication_
+
 - [Passport](http://www.passportjs.org/) - Passport
 - [Express](https://expressjs.com/) - Express
 

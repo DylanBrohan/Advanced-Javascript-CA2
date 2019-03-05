@@ -164,7 +164,7 @@ AddExperience.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  // Brings in state from reducer
+  // Brings in state from store
   profile: state.profile,
   errors: state.errors
 });

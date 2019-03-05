@@ -93,11 +93,13 @@ Dashboard.propTypes = {
   profile: PropTypes.object.isRequired
 };
 
+// Mapped state from store
 const mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth
 });
 
+// Connection to Redux & Store
 export default connect(
   mapStateToProps,
   { getCurrentProfile, deleteAccount }
