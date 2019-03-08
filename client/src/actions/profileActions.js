@@ -31,7 +31,6 @@ export const getProfileByHandle = handle => dispatch => {
       })
     );
 };
-
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
   // sets the loading state while getting data

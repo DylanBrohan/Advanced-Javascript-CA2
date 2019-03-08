@@ -52,9 +52,7 @@ class ProfileAbout extends Component {
               )}
             </p>
             <hr />
-            <h3 className="text-left text-success col-sm-4">
-              Languages You Know
-            </h3>
+            <h3 className="text-left text-success col-sm-4">Music Skills </h3>
             <div className="row">
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 {skill}
@@ -71,7 +69,7 @@ class ProfileAbout extends Component {
     );
   }
 }
-
+// Prop Checking - is Required
 ProfileAbout.propTypes = {
   profile: PropTypes.object.isRequired
 };

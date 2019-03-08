@@ -20,6 +20,8 @@ export const registerUser = (userData, history) => dispatch => {
       })
     );
 };
+// type: GET_ERRORS,
+// payload: err.response.date
 
 // Login User - Gets users token
 // Takes in userData

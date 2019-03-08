@@ -1,6 +1,5 @@
 // --Specialised isEmpty Function---
 // Checks for - EMPTY, Object,String & null
-
 // Setting the parameters for isEmpty validation function
 const isEmpty = value =>
   value === undefined ||
