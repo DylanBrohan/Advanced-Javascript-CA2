@@ -6,24 +6,9 @@ import axios from "axios";
 class ProfileAbout extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      recommenderData: []
-    };
+    this.state = {};
   }
-  componentDidMount() {
-    axios
-      .get("/rec")
-      .then(res => {
-        console.log(res.data);
-        this.setState({
-          recommenderData: res.data
-        });
-      })
-      // Else give back and error
-      .catch(err => {
-        console.log(err);
-      });
-  }
+  componentDidMount() {}
 
   render() {
     //   Destructure from props
@@ -59,9 +44,7 @@ class ProfileAbout extends Component {
               </div>
             </div>
             <div className="row">
-              <div className="d-flex flex-wrap justify-content-center align-items-center">
-                {this.state.recommenderData}
-              </div>
+              <div className="d-flex flex-wrap justify-content-center align-items-center" />
             </div>
           </div>
         </div>
