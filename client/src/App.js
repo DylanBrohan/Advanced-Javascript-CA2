@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // JWT token Decoder
 import jwt_decode from "jwt-decode";
-import setAuthToken from "./utils/setAuthToken";
+import setAuthToken from "./auth token/setAuthToken";
 
 // Redux Imports
 import { Provider } from "react-redux";
@@ -15,8 +15,8 @@ import { clearCurrentProfile } from "./actions/profileActions";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
+import Register from "./components/authenticate/Register";
+import Login from "./components/authenticate/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
