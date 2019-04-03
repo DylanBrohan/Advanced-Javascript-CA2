@@ -12,20 +12,20 @@ import { setCurrentUser } from "./actions/authActions";
 import { logoutUser } from "./actions/authActions";
 import { clearCurrentProfile } from "./actions/profileActions";
 // Layout Components
-import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
-import Landing from "./components/layout/Landing";
+import Navbar from "./components/main page/Navbar";
+import Footer from "./components/main page/Footer";
+import Landing from "./components/main page/Landing";
 import Register from "./components/authenticate/Register";
 import Login from "./components/authenticate/Login";
 import Dashboard from "./components/dashboard/Dashboard";
-import AddExperience from "./components/add-credentials/AddExperience";
-import AddEducation from "./components/add-credentials/AddEducation";
+import AddExperience from "./components/profile extras/AddExperience";
+import AddEducation from "./components/profile extras/AddEducation";
 // Profile Components
 import CreateProfile from "./components/create profile/CreateProfile";
 import EditProfile from "./components/edit profile/EditProfile";
 import Profiles from "./components/music profiles/Profiles";
 import Profile from "./components/music profile/Profile";
-import NotFound from "./components/add-credentials/not-found/NotFound";
+import NotFound from "./components/profile extras/not-found/NotFound";
 
 // Private Route Component
 import PrivateRoute from "./components/inputs/PrivateRoute";
@@ -54,7 +54,7 @@ if (localStorage.jwtToken) {
     window.location.href = "/login";
   }
 }
-
+// All Routes Connecting the application navigation
 class App extends Component {
   render() {
     return (
