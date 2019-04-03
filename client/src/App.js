@@ -23,8 +23,8 @@ import AddEducation from "./components/add-credentials/AddEducation";
 // Profile Components
 import CreateProfile from "./components/create profile/CreateProfile";
 import EditProfile from "./components/edit profile/EditProfile";
-import Profiles from "./components/profiles/Profiles";
-import Profile from "./components/profile/Profile";
+import Profiles from "./components/music profiles/Profiles";
+import Profile from "./components/music profile/Profile";
 import NotFound from "./components/add-credentials/not-found/NotFound";
 
 // Private Route Component
