@@ -17,7 +17,7 @@ const validateEducationInput = require("../../validation/education");
 
 // res.json serves a JSON request
 // Route GET api/profile/test, this tests the profile route
-router.get("/test", (req, res) => res.json({ msg: "Profile Works" }));
+// router.get("/test", (req, res) => res.json({ msg: "Profile Works" }));
 
 // Request users Id
 router.get(
@@ -96,6 +96,7 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    // Destructure from the state
     const { errors, isValid } = validateProfileInput(req.body);
 
     // CHECK Validation
@@ -104,7 +105,7 @@ router.post(
       return res.status(400).json(errors);
     }
 
-    //    Get Fields of the users profile
+    //  Get Fields of the users profile
     const profileFields = {};
     profileFields.user = req.user.id;
     if (req.body.handle) profileFields.handle = req.body.handle;

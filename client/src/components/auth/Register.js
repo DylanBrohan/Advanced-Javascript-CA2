@@ -7,7 +7,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 
-import TextFieldGroup from "../common/textFieldGroup";
+import TextFieldGroup from "../inputs/textFieldGroup";
 // Main Register page
 class Register extends Component {
   constructor() {
@@ -44,7 +44,6 @@ class Register extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-
     const newUser = {
       name: this.state.name,
       email: this.state.email,

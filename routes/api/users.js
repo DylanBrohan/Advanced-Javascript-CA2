@@ -64,6 +64,7 @@ router.post("/register", (req, res) => {
 // res.json serves a JSON request
 // Route GET api/users/login, login a user, returning as a token
 router.post("/login", (req, res) => {
+  // Destructuring errors from the state
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {

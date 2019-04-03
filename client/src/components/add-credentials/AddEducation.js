@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 // Field Components
-import TextFieldGroup from "../common/textFieldGroup";
-import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+import TextFieldGroup from "../inputs/textFieldGroup";
+import TextAreaFieldGroup from "../inputs/TextAreaFieldGroup";
 // Redux
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";

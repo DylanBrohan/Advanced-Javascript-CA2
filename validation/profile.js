@@ -6,7 +6,6 @@ module.exports = function validateProfileInput(data) {
 
   // If it exists it will be the result
   // if School field doesnt exist, make it an empty string
-
   data.handle = !isEmpty(data.handle) ? data.handle : "";
   data.status = !isEmpty(data.status) ? data.status : "";
   data.skills = !isEmpty(data.skills) ? data.skills : "";
@@ -14,11 +13,11 @@ module.exports = function validateProfileInput(data) {
   // Validation settings/ testing
   if (
     !Validator.isLength(data.handle, {
-      min: 2,
+      min: 6,
       max: 40
     })
   ) {
-    errors.handle = "Handle needs to between 2 and 4 charecters ";
+    errors.handle = "Handle needs to between 6 and 40 charecters ";
   }
 
   if (Validator.isEmpty(data.handle)) {

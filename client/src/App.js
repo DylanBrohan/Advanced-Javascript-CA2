@@ -21,14 +21,14 @@ import Dashboard from "./components/dashboard/Dashboard";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 // Profile Components
-import CreateProfile from "./components/create-profile/CreateProfile";
-import EditProfile from "./components/edit-profile/EditProfile";
+import CreateProfile from "./components/create profile/CreateProfile";
+import EditProfile from "./components/edit profile/EditProfile";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
 import NotFound from "./components/add-credentials/not-found/NotFound";
 
 // Private Route Component
-import PrivateRoute from "./components/common/PrivateRoute";
+import PrivateRoute from "./components/inputs/PrivateRoute";
 
 import "./App.css";
 
@@ -81,7 +81,6 @@ class App extends Component {
                 component={CreateProfile}
               />
             </Switch>
-
             <Switch>
               <PrivateRoute
                 exact
@@ -89,7 +88,6 @@ class App extends Component {
                 component={EditProfile}
               />
             </Switch>
-
             <Switch>
               <PrivateRoute
                 exact

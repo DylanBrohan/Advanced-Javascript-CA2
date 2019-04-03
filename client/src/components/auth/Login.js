@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 // Connects to redux
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import TextFieldGroup from "../common/textFieldGroup";
+import TextFieldGroup from "../inputs/textFieldGroup";
 // Login page
 class Login extends Component {
   constructor() {
@@ -47,7 +47,6 @@ class Login extends Component {
   render() {
     // --Errors come in as properties from reducers and are mapped back to state--
     const { errors } = this.state;
-
     return (
       //  <-- Login -->
       <div className="login">
@@ -67,7 +66,6 @@ class Login extends Component {
                   onChange={this.onChange}
                   error={errors.email}
                 />
-
                 <TextFieldGroup
                   placeholder="Password "
                   name="password"
