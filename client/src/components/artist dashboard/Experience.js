@@ -6,10 +6,12 @@ import { deleteExperience } from "../../actions/profileActions";
 import Moment from "react-moment";
 
 class Experience extends Component {
+  // On delete click -> by id
   onDeleteClick(id) {
     this.props.deleteExperience(id);
   }
   render() {
+    // MAP through the experience array and pull out
     const experience = this.props.experience.map(exp => (
       <tr key={exp._id}>
         <td>{exp.company}</td>
@@ -23,6 +25,7 @@ class Experience extends Component {
           )}
         </td>
         <td>
+          {/* Bind to state of ondeleteclick  */}
           <button
             onClick={this.onDeleteClick.bind(this, exp._id)}
             className="btn                                  btn-danger"
@@ -43,6 +46,7 @@ class Experience extends Component {
               <th>Years</th>
               <th> </th>
             </tr>
+            {/* Display the experience via state */}
             {experience}
           </thead>
         </table>

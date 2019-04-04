@@ -23,10 +23,12 @@ class ProfileItem extends Component {
               )}
             </p>
             <p>
+              {/* If the location is empty then nothing else, put it in a span */}
               {isEmpty(profile.location) ? null : (
                 <span>{profile.location}</span>
               )}
             </p>
+            {/* View Profile through the profile handle of the users  */}
             <Link to={`/profile/${profile.handle}`} className="btn btn-success">
               View Profile
             </Link>

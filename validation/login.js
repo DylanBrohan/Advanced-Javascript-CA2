@@ -21,6 +21,7 @@ module.exports = function validateLoginInput(data) {
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password Field is required";
   }
+  // If everthing passes, errors will be empty & valid
 
   return {
     errors,

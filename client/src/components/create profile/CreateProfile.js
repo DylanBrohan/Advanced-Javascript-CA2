@@ -16,6 +16,7 @@ class CreateProfile extends Component {
   // Component state values
   constructor(props) {
     super(props);
+    // Setting initial State
     this.state = {
       displaySocialInputs: false,
       handle: "",
@@ -34,6 +35,7 @@ class CreateProfile extends Component {
       //   Get errors from redux state
       errors: {}
     };
+    // Binding to the state
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -45,7 +47,7 @@ class CreateProfile extends Component {
   }
   onSubmit(e) {
     e.preventDefault();
-    // Has All the profile fields from state
+    // Has All the profile fields from state on submit
     const profileData = {
       handle: this.state.handle,
       company: this.state.company,
@@ -69,10 +71,11 @@ class CreateProfile extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
   render() {
-    // This will come from the constructor errors state
+    // Destructering from the state
     const { errors, displaySocialInputs } = this.state;
     // This contains all social inputs
     let socialInputs;
+    // If their is social inputs - display them via state
     if (displaySocialInputs) {
       socialInputs = (
         <div>
@@ -141,6 +144,7 @@ class CreateProfile extends Component {
                 Add Information to make your profile
               </p>
               <small className="d-block pb-3">* = required fields</small>
+              {/* On Submit set the state of each */}
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
@@ -250,6 +254,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
+// Connection to Redux stores
 export default connect(
   mapStateToProps,
   { createProfile }

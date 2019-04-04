@@ -11,6 +11,7 @@ import { addEducation } from "../../actions/profileActions";
 class AddEducation extends Component {
   constructor(props) {
     super(props);
+    // Sets Initial state
     this.state = {
       school: "",
       degree: "",
@@ -22,12 +23,12 @@ class AddEducation extends Component {
       errors: {},
       disabled: false
     };
-
+    // Bings functions to state
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onCheck = this.onCheck.bind(this);
   }
-
+  // do this when their is an update in state
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -38,7 +39,7 @@ class AddEducation extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    // Experience Object
+    // Education Object
     const eduData = {
       school: this.state.school,
       degree: this.state.degree,
@@ -48,10 +49,10 @@ class AddEducation extends Component {
       current: this.state.current,
       description: this.state.decription
     };
-    // Call props add experience
+    // Call props add Education
     this.props.addEducation(eduData, this.props.history);
   }
-
+  // On Change set the state for that value
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -65,6 +66,7 @@ class AddEducation extends Component {
 
   render() {
     //   --Curley Braces pulls errors out--
+    // Destructuring of errors
     const { errors } = this.state;
 
     return (
@@ -72,6 +74,7 @@ class AddEducation extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+              {/* Public link */}
               <Link to="/dashboard" className="btn btn-light">
                 Dashboard
               </Link>
@@ -157,18 +160,19 @@ class AddEducation extends Component {
     );
   }
 }
+// Prop Checking Fields
 AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
-
+// Mapping State from store to props
 const mapStateToProps = state => ({
   // Brings in state from reducer
   profile: state.profile,
   errors: state.errors
 });
-
+// Connecting to Store
 export default connect(
   mapStateToProps,
   { addEducation }

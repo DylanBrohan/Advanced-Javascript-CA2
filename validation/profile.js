@@ -39,7 +39,9 @@ module.exports = function validateProfileInput(data) {
     }
   }
 
+  // If youtube is not empty
   if (!isEmpty(data.youtube)) {
+    // if the url is not valid (youtube)
     if (!Validator.isURL(data.youtube)) {
       errors.youtube = "Not a valid URL";
     }
@@ -54,8 +56,9 @@ module.exports = function validateProfileInput(data) {
       errors.facebook = "Not a valid URL";
     }
   }
-
+  // If linkedin is not empty
   if (!isEmpty(data.linkedin)) {
+    // if the url is not valid (linkedin)
     if (!Validator.isURL(data.linkedin)) {
       errors.linkedin = "Not a valid URL";
     }
@@ -67,6 +70,7 @@ module.exports = function validateProfileInput(data) {
     }
   }
 
+  // If everthing passes, errors will be empty & valid
   return {
     errors,
     isValid: isEmpty(errors)

@@ -3,6 +3,7 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 
 const InputGroup = ({
+  // Initial state
   name,
   placeholder,
   value,
@@ -12,6 +13,7 @@ const InputGroup = ({
   onChange
 }) => {
   return (
+    // Styling for an input group
     <div className="input-group mb-3">
       <div className="input-group-prepend">
         <span className="input-group- text">
@@ -36,7 +38,7 @@ const InputGroup = ({
     </div>
   );
 };
-
+// Prop Checking on all variables
 InputGroup.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,

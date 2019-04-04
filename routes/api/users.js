@@ -83,14 +83,12 @@ router.get(
 router.post("/login", (req, res) => {
   // Destructuring errors from the state
   const { errors, isValid } = validateLoginInput(req.body);
-
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
   const email = req.body.email;
   const password = req.body.password;
-
   // FINDS the user by there email_Id
   User.findOne({ email }).then(user => {
     // if there is no user

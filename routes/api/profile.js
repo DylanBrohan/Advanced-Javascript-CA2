@@ -15,23 +15,25 @@ const validateProfileInput = require("../../validation/profile");
 const validateExperienceInput = require("../../validation/experience");
 const validateEducationInput = require("../../validation/education");
 
-// res.json serves a JSON request
-// Route GET api/profile/test, this tests the profile route
-// router.get("/test", (req, res) => res.json({ msg: "Profile Works" }));
-
 // Request users Id
 router.get(
   "/",
+  // Private route needs a jwt to access
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const errors = {};
+    // find the profile
     Profile.findOne({ user: req.user.id })
+      // populate the user (ref) with name & avatar variables from user model
       .populate("user", ["name", "avatar"])
       .then(profile => {
         if (!profile) {
+          // if their is not profile
           errors.noprofile = "There is no profile for this user";
+          // send back an error
           return res.status(404).json(errors);
         }
+        // else json object of profile
         res.json(profile);
       })
       .catch(err => res.status(404).json(err));
@@ -94,6 +96,7 @@ router.get("/user/:user_id", (req, res) => {
 // Creates/Edits users Profile
 router.post(
   "/",
+  // Private Route
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     // Destructure from the state
@@ -146,7 +149,7 @@ router.post(
             res.status(400).json(errors);
           }
 
-          // Saves profile
+          // Saves profile updated
           new Profile(profileFields).save().then(profile => res.json(profile));
         });
       }
@@ -166,10 +169,11 @@ router.post(
       // Return any errors with 400 status
       return res.status(400).json(errors);
     }
-
+    // Find profile by id
     Profile.findOne({
       user: req.user.id
     }).then(profile => {
+      // then create a newExp
       const newExp = {
         title: req.body.title,
         company: req.body.company,
@@ -204,6 +208,7 @@ router.post(
     Profile.findOne({
       user: req.user.id
     }).then(profile => {
+      // Create a new Education
       const newEdu = {
         school: req.body.school,
         degree: req.body.degree,
@@ -214,7 +219,7 @@ router.post(
         description: req.body.description
       };
 
-      // Add to exp array
+      // Add to education array
       profile.education.unshift(newEdu);
       profile.save().then(profile => res.json(profile));
     });
@@ -224,6 +229,7 @@ router.post(
 // DELETE api/profile/Experience/
 // DELETE experience from profiles
 router.delete(
+  // Delete experience by its id
   "/experience/:exp_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
@@ -249,7 +255,9 @@ router.delete(
 // DELETE api/profile/Education/
 // DELETE Education from profiles
 router.delete(
+  // remove education by its id
   "/education/:edu_id",
+  // Private route needs to have a jwt to access
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Profile.findOne({

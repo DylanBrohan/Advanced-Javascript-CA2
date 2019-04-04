@@ -16,6 +16,7 @@ class CreateProfile extends Component {
   // Component state values
   constructor(props) {
     super(props);
+    // Initial state set
     this.state = {
       displaySocialInputs: false,
       handle: "",
@@ -34,7 +35,7 @@ class CreateProfile extends Component {
       //   Get errors from redux state
       errors: {}
     };
-
+    // Binding to the statae values
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -134,12 +135,12 @@ class CreateProfile extends Component {
     // Then calls create profile
     this.props.createProfile(profileData, this.props.history);
   }
-
+  // If there is a change set the state to the new value
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
   render() {
-    // This will come from the constructor errors state
+    // Pulling out social inputs and putting into the components state
     const { errors, displaySocialInputs } = this.state;
     // This contains all social inputs
     let socialInputs;
@@ -191,6 +192,7 @@ class CreateProfile extends Component {
     }
     // Select options for status
     const options = [
+      // Array of input options
       { label: "* Select Professional Status", value: 0 },
       { label: "Solo Artist", value: "Solo Artist" },
       { label: "Mix DJ", value: "Mix DJ" },
@@ -205,7 +207,9 @@ class CreateProfile extends Component {
       <div className="create-profile">
         <div className="container">
           <div className="row">
+            {/* Styling and grid formatting for the form */}
             <div className="col-md-8 m-auto">
+              {/* Dashboard Link */}
               <Link to="/dashboard" className="btn btn-light">
                 Dashboard
               </Link>
@@ -214,6 +218,7 @@ class CreateProfile extends Component {
                 Edit Information In Your Profile
               </p>
               <small className="d-block pb-3">* = required fields</small>
+              {/* On submit save new states  */}
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
@@ -316,7 +321,7 @@ CreateProfile.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-// Maps the state to the Field
+// Maps the state to the Fields
 const mapStateToProps = state => ({
   // current profile will get mapped to props
   createProfile: PropTypes.func.isRequired,
@@ -326,6 +331,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
+// Connecting to Redux Store Pulling in types
 export default connect(
   mapStateToProps,
   { createProfile, getCurrentProfile }

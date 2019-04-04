@@ -27,5 +27,5 @@ PrivateRoute.propTypes = {
 const mapStateToProps = state => ({
   auth: state.auth
 });
-
+// Connect to redux store
 export default connect(mapStateToProps)(PrivateRoute);

@@ -5,11 +5,14 @@ import PropTypes from "prop-types";
 import { deleteEducation } from "../../actions/profileActions";
 import Moment from "react-moment";
 
+// Education Component
 class Education extends Component {
+  // On delete -> by the id from props
   onDeleteClick(id) {
     this.props.deleteEducation(id);
   }
   render() {
+    // Map through the education array props
     const education = this.props.education.map(edu => (
       <tr key={edu._id}>
         <td>{edu.school}</td>
@@ -23,6 +26,7 @@ class Education extends Component {
           )}
         </td>
         <td>
+          {/* On Click delete education via their _id */}
           <button
             onClick={this.onDeleteClick.bind(this, edu._id)}
             className="btn                                  btn-danger"
@@ -43,6 +47,7 @@ class Education extends Component {
               <th>Years</th>
               <th> </th>
             </tr>
+            {/* Display education */}
             {education}
           </thead>
         </table>

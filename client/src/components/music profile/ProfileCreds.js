@@ -9,9 +9,12 @@ class ProfileCreds extends Component {
     // Mapping through both experience & education Items
     const expItems = experience.map(exp => (
       <li key={exp._id} className="list-group-item">
+        {/* Display experience company */}
         <h4>{exp.company}</h4>
         <p>
+          {/* as a Moment Component display from state */}
           <Moment format="YYYY/MM/DD">{exp.from}</Moment> -{" "}
+          {/* If experience to date is null = Now, Else pull form state */}
           {exp.to === null ? (
             "Now"
           ) : (
@@ -19,6 +22,7 @@ class ProfileCreds extends Component {
           )}
         </p>
         <p>
+          {/* Pull from state */}
           <strong>Position: </strong> {exp.title}
         </p>
         {/* If Locaiton is = nothing let it = null if not pull in  */}
@@ -76,18 +80,22 @@ class ProfileCreds extends Component {
       <div className="row">
         <div className="col-md-6">
           <h3 className="text-center text-success">Experience</h3>
+          {/* If there is more than 1 experience display from state  */}
           {expItems.length > 0 ? (
             <ul className="list-group">{expItems}</ul>
           ) : (
+            // Else there is no Experience Fields
             <p className="text-center">No Experience Fields</p>
           )}
         </div>
 
         <div className="col-md-6">
-          <h3 className="text-center text-success">Education</h3>
+          <h3 className="text-center text-success">Education</h3>{" "}
+          {/* If there is more than 1 education display from state  */}
           {eduItems.length > 0 ? (
             <ul className="list-group">{eduItems}</ul>
           ) : (
+            // Else there is no Education Fields
             <p className="text-center">No Education Fields</p>
           )}
         </div>

@@ -12,6 +12,7 @@ module.exports = function validateExperienceInput(data) {
   data.fieldofstudy = !isEmpty(data.fieldofstudy) ? data.fieldofstudy : "";
   data.from = !isEmpty(data.from) ? data.from : "";
 
+  // If the validator isEmpty (school) ->
   if (Validator.isEmpty(data.school)) {
     errors.school = "School Field is required";
   }
@@ -27,7 +28,7 @@ module.exports = function validateExperienceInput(data) {
   if (Validator.isEmpty(data.from)) {
     errors.from = "From Date Field is required";
   }
-
+  // If everthing passes, errors will be empty & valid
   return {
     errors,
     isValid: isEmpty(errors)

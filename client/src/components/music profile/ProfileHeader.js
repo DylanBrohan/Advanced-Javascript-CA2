@@ -15,6 +15,7 @@ class ProfileHeader extends Component {
               <div className="col-4 col-md-3 m-auto">
                 <img
                   className="rounded-circle"
+                  // Pulling state from profile state
                   src={profile.user.avatar}
                   alt=""
                 />
@@ -24,12 +25,14 @@ class ProfileHeader extends Component {
               <h1 className="display-4 text-center">{profile.user.name}</h1>
               <p className="lead text-center">
                 {profile.status}{" "}
+                {/* IF profile company is empty, else display in a span tag */}
                 {isEmpty(profile.company) ? null : (
                   <span>@{profile.company}</span>
                 )}
               </p>{" "}
               {isEmpty(profile.location) ? null : <p>{profile.location}</p>}
               <p>
+                {/* If the website state is empty, else display in an article tag */}
                 {isEmpty(profile.website) ? null : (
                   <a
                     className="text-white p-2"
@@ -40,6 +43,8 @@ class ProfileHeader extends Component {
                   </a>
                 )}
 
+                {/*All Social tags coming from profile state  */}
+
                 {isEmpty(profile.social && profile.social.twitter) ? null : (
                   <a
                     className="text-white p-2"
@@ -49,7 +54,7 @@ class ProfileHeader extends Component {
                     <i className="fab fa-twitter fa-2x" />
                   </a>
                 )}
-
+                {/* If profile social and facebook is empty, else display in an a tag */}
                 {isEmpty(profile.social && profile.social.facebook) ? null : (
                   <a
                     className="text-white p-2"

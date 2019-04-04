@@ -78,6 +78,7 @@ class Dashboard extends Component {
           <div className="row">
             <div className="col-md-12">
               <h1 className="h1 display-4">Dashboard</h1>
+              {/* Displaying dashboard content from state */}
               {dashboardContent}
             </div>
           </div>
@@ -86,7 +87,7 @@ class Dashboard extends Component {
     );
   }
 }
-
+// Prop checking these varaibles
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   deleteAccount: PropTypes.func.isRequired,

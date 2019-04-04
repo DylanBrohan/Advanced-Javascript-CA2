@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // Links to Areas in Profile
 const ProfileActions = () => {
   return (
+    // Grid and button styling around each
     <div className="btn-group mb-4" role="group">
       <Link to="/edit-profile" className="btn btn-light">
         <i className="fas fa-user-circle text-success mr-1" /> Edit Profile

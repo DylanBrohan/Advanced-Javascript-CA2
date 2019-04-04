@@ -157,18 +157,19 @@ class AddExperience extends Component {
     );
   }
 }
+// Prop Checking on these fields
 AddExperience.propTypes = {
   addExperience: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
-
+// Mapping state from Store to the props
 const mapStateToProps = state => ({
   // Brings in state from store
   profile: state.profile,
   errors: state.errors
 });
-
+// Connecting to store
 export default connect(
   mapStateToProps,
   { addExperience }

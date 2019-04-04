@@ -14,9 +14,10 @@ class Profiles extends Component {
   }
 
   render() {
+    // Destructuring profiles & loading
     const { profiles, loading } = this.props.profile;
     let profileItems;
-
+    // If theres no profiles or its loading
     if (profiles === null || loading) {
       // If thats true load spinner gif
       profileItems = <Spinner />;
@@ -49,16 +50,16 @@ class Profiles extends Component {
     );
   }
 }
-
+// Prop Checking on these fields are required
 Profiles.propTypes = {
   getProfiles: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
-
+// Mapping state from store to profile
 const mapStateToProps = state => ({
   profile: state.profile
 });
-
+// Connecting to the store
 export default connect(
   mapStateToProps,
   { getProfiles }

@@ -11,7 +11,7 @@ class ProfileAbout extends Component {
   componentDidMount() {}
 
   render() {
-    //   Destructure from props
+    // Takes from parent component PROFILE
     const { profile } = this.props;
     // Get First Name
     const firstName = profile.user.name.trim().split(" ")[0];
@@ -28,11 +28,14 @@ class ProfileAbout extends Component {
       <div className="row">
         <div className="col-md-12">
           <div className="card card-body bg-light mb-3">
+            {/* Pull out first name from the state and display */}
             <h3 className="text-center text-success">{firstName}'s Bio</h3>
             <p className="lead">
+              {/* Id the users bio is empty display the following */}
               {isEmpty(profile.bio) ? (
                 <span> {firstName}Does Not Have a Bio</span>
               ) : (
+                // Else pull from state
                 <span>{profile.bio}</span>
               )}
             </p>
@@ -40,6 +43,7 @@ class ProfileAbout extends Component {
             <h3 className="text-left text-success col-sm-4">Music Skills </h3>
             <div className="row">
               <div className="d-flex flex-wrap justify-content-center align-items-center">
+                {/* Pull skills from state */}
                 {skill}
               </div>
             </div>

@@ -4,6 +4,8 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 
 class Landing extends Component {
+  // when the component executes
+  // If the the user is authenticated via props, push / redirect to that specific dashboard
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
@@ -14,6 +16,7 @@ class Landing extends Component {
     return (
       //  <!-- Landing -->
       <div className="landing">
+        {/* Styling and grid  */}
         <div className="dark-overlay landing-inner text-light">
           <div className="container">
             <div className="row">
@@ -43,8 +46,10 @@ class Landing extends Component {
 Landing.propTypes = {
   auth: PropTypes.object.isRequired
 };
+
+// Mapping from the Store to the state
 const mapStateToProps = state => ({
   auth: state.auth
 });
-
+// Connction to Store
 export default connect(mapStateToProps)(Landing);

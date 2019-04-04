@@ -3,6 +3,7 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 
 const TextAreaFieldGroup = ({
+  // Values of a text area field group
   name,
   placeholder,
   value,

@@ -33,10 +33,9 @@ class Login extends Component {
     // Sets the state
     this.setState({ [e.target.name]: e.target.value });
   }
-
+  // On submit
   onSubmit(e) {
     e.preventDefault();
-
     const userData = {
       email: this.state.email,
       password: this.state.password
@@ -86,7 +85,7 @@ class Login extends Component {
     );
   }
 }
-
+// Prop Checking thes objects and functions
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
