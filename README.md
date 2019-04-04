@@ -51,3 +51,12 @@ _To begin both server Concurrently_
 # 4:
 
 **This is a Follow on to CA1 of this project, this application is a full stack application instead of pulling the data from a external api**
+
+**This Project was Built in Conjuction with my Final Year Project. Javascript Developer is what I hope to pursue as a career.**
+
+\*\*This Project was Inspired by - [Traversy Media](https://www.youtube.com/user/TechGuyWeb) & His Work on Full Stack Applications It was also inspired by some [Medium Documents](https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274)
+that helped me in understanding full stack applications.
+
+## Demonstration
+
+<a href="https://imgflip.com/gif/2xrquj"><img src="https://i.imgflip.com/2xrquj.gif" title="made at imgflip.com"/></a>
