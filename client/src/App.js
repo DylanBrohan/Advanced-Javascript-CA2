@@ -7,6 +7,7 @@ import setAuthToken from "./auth token/setAuthToken";
 // Redux Imports
 import { Provider } from "react-redux";
 import store from "./store";
+
 // Profile Actions
 import { setCurrentUser } from "./actions/authActions";
 import { logoutUser } from "./actions/authActions";
@@ -17,9 +18,10 @@ import Footer from "./components/main page/Footer";
 import Landing from "./components/main page/Landing";
 import Register from "./components/authenticate/Register";
 import Login from "./components/authenticate/Login";
-import Dashboard from "./components/dashboard/Dashboard";
+import Dashboard from "./components/artist dashboard/Dashboard";
 import AddExperience from "./components/profile extras/AddExperience";
 import AddEducation from "./components/profile extras/AddEducation";
+
 // Profile Components
 import CreateProfile from "./components/create profile/CreateProfile";
 import EditProfile from "./components/edit profile/EditProfile";
