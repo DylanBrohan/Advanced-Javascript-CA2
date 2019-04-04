@@ -9,28 +9,7 @@ import {
   CLEAR_CURRENT_PROFILE,
   SET_CURRENT_USER
 } from "./types";
-// Get profile by Handle
-export const getProfileByHandle = handle => dispatch => {
-  // sets the loading state while getting data
-  dispatch(setProfileLoading());
-  //   Request to Server
-  axios
-    .get(`/api/profile/handle/${handle}`)
-    .then(res =>
-      dispatch({
-        //   if it finds a profile it passes along the data to the Profile Reducer
-        type: GET_PROFILE,
-        payload: res.data
-      })
-    )
-    //   if there isnt a profile return empty object
-    .catch(err =>
-      dispatch({
-        type: GET_PROFILE,
-        payload: null
-      })
-    );
-};
+
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
   // sets the loading state while getting data
@@ -50,6 +29,29 @@ export const getCurrentProfile = () => dispatch => {
       dispatch({
         type: GET_PROFILE,
         payload: {}
+      })
+    );
+};
+
+// Get profile by Handle
+export const getProfileByHandle = handle => dispatch => {
+  // sets the loading state while getting data
+  dispatch(setProfileLoading());
+  //   Request to Server
+  axios
+    .get(`/api/profile/handle/${handle}`)
+    .then(res =>
+      dispatch({
+        //   if it finds a profile it passes along the data to the Profile Reducer
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    )
+    //   if there isnt a profile return empty object
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: null
       })
     );
 };
@@ -76,6 +78,27 @@ export const setProfileLoading = () => {
   };
 };
 
+// Get all Profiles
+export const getProfiles = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    // Pass along expData
+    .get("/api/profile/all")
+    // If Successfule redirect to dashboard
+    .then(res =>
+      dispatch({
+        type: GET_PROFILES,
+        // Pass in data which is an array of profiles
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: null
+      })
+    );
+};
 // Clear Profile
 export const clearCurrentProfile = () => {
   return {
@@ -110,28 +133,6 @@ export const addEducation = (eduData, history) => dispatch => {
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
-      })
-    );
-};
-
-// Get all Profiles
-export const getProfiles = () => dispatch => {
-  dispatch(setProfileLoading());
-  axios
-    // Pass along expData
-    .get("/api/profile/all")
-    // If Successfule redirect to dashboard
-    .then(res =>
-      dispatch({
-        type: GET_PROFILES,
-        // Pass in data which is an array of profiles
-        payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_PROFILES,
-        payload: null
       })
     );
 };

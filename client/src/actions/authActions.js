@@ -20,6 +20,13 @@ export const registerUser = (userData, history) => dispatch => {
       })
     );
 };
+
+export const setCurrentUser = decoded => {
+  return {
+    type: SET_CURRENT_USER,
+    payload: decoded
+  };
+};
 // type: GET_ERRORS,
 // payload: err.response.date
 
@@ -48,13 +55,6 @@ export const loginUser = userData => dispatch => {
         payload: err.response.data
       })
     );
-};
-
-export const setCurrentUser = decoded => {
-  return {
-    type: SET_CURRENT_USER,
-    payload: decoded
-  };
 };
 
 // Log user out

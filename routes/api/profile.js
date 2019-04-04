@@ -41,7 +41,7 @@ router.get(
 // Get all profiles
 router.get("/all", (req, res) => {
   const errors = {};
-
+  // Populate user reference with - name & avatar
   Profile.find()
     .populate("user", ["name", "avatar"])
     .then(profiles => {

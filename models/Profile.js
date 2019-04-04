@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ProfileSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    // Setting up ONE to Many Relationship between collections
+    // Setting up One - Many Relationship between collections
     ref: "user"
   },
   handle: {
@@ -27,6 +27,7 @@ const ProfileSchema = new Schema({
     required: true
   },
   skills: {
+    // An Array of strings
     type: [String],
     required: true
   },
