@@ -21,7 +21,7 @@ module.exports = function validateExperienceInput(data) {
   }
 
   if (Validator.isEmpty(data.fieldofstudy)) {
-    errors.fieldofstudy = "From Date Field is required";
+    errors.fieldofstudy = "Field of study is required";
   }
 
   if (Validator.isEmpty(data.from)) {
