@@ -27,9 +27,6 @@ export const setCurrentUser = decoded => {
     payload: decoded
   };
 };
-// type: GET_ERRORS,
-// payload: err.response.date
-
 // Login User - Gets users token
 // Takes in userData
 export const loginUser = userData => dispatch => {
