@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 // Components
 import Spinner from "../inputs/Spinner";
-import { getProfiles } from "../../actions/profileActions";
+import { getProfiles } from "../../actions/musicActions";
 import ProfileItem from "./ProfileItem";
 
 class Profiles extends Component {

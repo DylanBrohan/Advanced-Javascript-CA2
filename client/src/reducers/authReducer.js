@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from "../actions/types";
+import { SET_CURRENT_USER } from "../actions/Constants";
 import isEmpty from "../validation/is-empty";
 // Creates an initial state and its parameters
 const initialState = {
@@ -11,6 +11,7 @@ export default function(state = initialState, action) {
     case SET_CURRENT_USER:
       return {
         //   Current State
+        // Spread Opperator
         ...state,
         isAuthenticated: !isEmpty(action.payload),
         // The users information is the actual payload

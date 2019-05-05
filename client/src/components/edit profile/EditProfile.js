@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 // Uses same Profile action as CreateProfile
-import { createProfile, getCurrentProfile } from "../../actions/profileActions";
+import { createProfile, getCurrentProfile } from "../../actions/musicActions";
 // IsEmpty Function
 import isEmpty from "../../validation/is-empty";
 // Input Components
@@ -64,9 +64,6 @@ class CreateProfile extends Component {
 
       profile.location = !isEmpty(profile.location) ? profile.location : "";
 
-      profile.githubusername = !isEmpty(profile.githubusername)
-        ? profile.githubusername
-        : "";
       profile.bio = !isEmpty(profile.bio) ? profile.bio : "";
 
       // Social is an Array so must be treated like an empty string

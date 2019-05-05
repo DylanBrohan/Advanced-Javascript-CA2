@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 // Actions
 import { connect } from "react-redux";
-import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
+import { getCurrentProfile, deleteAccount } from "../../actions/musicActions";
 
 // Components
 import Spinner from "../inputs/Spinner";
 import { Link } from "react-router-dom";
-import ProfileActions from "./ProfileActions";
+import ProfileActions from "./ProfileRoutes";
 import Experience from "./Experience";
 import Education from "./Education";
 

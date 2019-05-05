@@ -8,7 +8,7 @@ import {
   GET_ERRORS,
   CLEAR_CURRENT_PROFILE,
   SET_CURRENT_USER
-} from "./types";
+} from "./Constants";
 
 // Get current profile
 export const getCurrentProfile = () => dispatch => {

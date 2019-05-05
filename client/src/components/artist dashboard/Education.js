@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import { deleteEducation } from "../../actions/profileActions";
+import { deleteEducation } from "../../actions/musicActions";
 import Moment from "react-moment";
 
 // Education Component

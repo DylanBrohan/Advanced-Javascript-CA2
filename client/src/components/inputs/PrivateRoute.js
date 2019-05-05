@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const PrivateRoute = ({ component: Component, auth, ...rest }) => (
   <Route
-    // Spread Attributes
+    // Spread opperator
     {...rest}
     render={props =>
       //  if this is = true we are logged in

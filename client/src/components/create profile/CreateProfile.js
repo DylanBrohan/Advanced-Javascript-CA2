@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import { createProfile } from "../../actions/profileActions";
+import { createProfile } from "../../actions/musicActions";
 
 // Input Components
 import TextFieldGroup from "../inputs/textFieldGroup";

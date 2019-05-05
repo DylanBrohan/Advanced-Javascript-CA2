@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 
 // All Sub Components of Profile
 import ProfileHeader from "./ProfileHeader";
-import ProfileAbout from "./ProfileAbout";
-import ProfileCreds from "./ProfileCreds";
+import ProfileAbout from "./ProfileBio";
+import ProfileCreds from "./ProfileSub";
 import Spinner from "../inputs/Spinner";
-import { getProfileByHandle } from "../../actions/profileActions";
+import { getProfileByHandle } from "../../actions/musicActions";
 
 class Profile extends Component {
   // When the component loads

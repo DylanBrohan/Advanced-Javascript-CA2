@@ -6,7 +6,7 @@ import TextAreaFieldGroup from "../inputs/TextAreaFieldGroup";
 // Redux
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
-import { addEducation } from "../../actions/profileActions";
+import { addEducation } from "../../actions/musicActions";
 
 class AddEducation extends Component {
   constructor(props) {

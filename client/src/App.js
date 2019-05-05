@@ -11,7 +11,7 @@ import store from "./store";
 // Profile Actions
 import { setCurrentUser } from "./actions/authActions";
 import { logoutUser } from "./actions/authActions";
-import { clearCurrentProfile } from "./actions/profileActions";
+import { clearCurrentProfile } from "./actions/musicActions";
 // Layout Components
 import Navbar from "./components/main page/Navbar";
 import Footer from "./components/main page/Footer";

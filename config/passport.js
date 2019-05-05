@@ -3,6 +3,7 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const mongoose = require("mongoose");
 const User = mongoose.model("user");
 const keys = require("../config/keys");
+
 // ---File used to extract the json token from the bearer---
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();

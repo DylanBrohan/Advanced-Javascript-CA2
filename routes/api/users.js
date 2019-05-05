@@ -20,6 +20,22 @@ const User = require("../../models/User");
 router.get("/test", (req, res) => res.json({ msg: "Users Works" }));
 
 // res.json serves a JSON request
+// Route  api/users/current, this tests the users route
+// Route is now private/protected with passport
+router.get(
+  "/current",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    res.json({
+      // Gets back the follow variables from the current user
+      id: req.user.id,
+      name: req.user.name,
+      email: req.user.email
+    });
+  }
+);
+
+// res.json serves a JSON request
 // Route GET api/users/register, registering a user
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -61,22 +77,6 @@ router.post("/register", (req, res) => {
     }
   });
 });
-
-// res.json serves a JSON request
-// Route  api/users/current, this tests the users route
-// Route is now private/protected with passport
-router.get(
-  "/current",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json({
-      // Gets back the follow variables from the current user
-      id: req.user.id,
-      name: req.user.name,
-      email: req.user.email
-    });
-  }
-);
 
 // res.json serves a JSON request
 // Route GET api/users/login, login a user, returning as a token
